@@ -24,4 +24,6 @@
               Dubbo需要将Service发布为服务，要求必须使用cglib创建代理对象。
     -->
     <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+
+    <import resource="classpath:spring-redis.xml"></import>
 </beans>

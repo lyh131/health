@@ -25,9 +25,9 @@ public class PackageController {
     private PackageService packageService;
 
     @GetMapping("/getPackage")
-    public Result getPackage() {
+    public Result getPackage() throws Exception {
         // 流程性质，代码走到哪里了
-        log.info("getPackage.do ....");
+//        log.info("getPackage.do ....");
         // 调用业务服务查询所有的套餐列表
         List<Package> list = packageService.findAll();
         // 拼接图片list.forEach  $.each, js list.forEach
@@ -35,7 +35,7 @@ public class PackageController {
         /*for (Package pkg : list) {
 
         }*/
-        log.info("getPackage.do finish size=" + (null == list?0:list.size()));
+//        log.info("getPackage.do finish size=" + (null == list?0:list.size()));
         list.forEach(pkg -> {
             pkg.setImg(QiNiuUtil.DOMAIN + "/" + pkg.getImg());
         });
@@ -44,7 +44,7 @@ public class PackageController {
     }
 
     @GetMapping("/getPackageDetail")
-    public Result getPackageDetail(int id){
+    public Result getPackageDetail(int id) throws Exception {
         // 魔鬼数字，字符串
         /*if(id.equals("id")){
 

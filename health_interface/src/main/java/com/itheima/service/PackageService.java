@@ -17,14 +17,14 @@ public interface PackageService {
      * 查询所有的套餐
      * @return
      */
-    List<Package> findAll();
+    List<Package> findAll() throws Exception;
 
     /**
      * 获取套餐详情信息
      * @param id
      * @return
      */
-    Package getPackageDetail(int id);
+    Package getPackageDetail(int id) throws Exception;
 
     /**
      * 通过编号获取套餐信息
